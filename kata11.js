@@ -13,3 +13,9 @@
 // prismVolume() will calculate the volume of a prism given a height, a width, and a depth
 // The fourth function, totalVolume(), will receive an array containing the different shapes that make up a single attraction. The totalVolume function should use the previous three functions to calculate the total volume of an attraction.
 
+const sphereVolume = function(radius) {
+  return Math.pow(radius, 3) * (4/3) * Math.PI;
+};
+
+console.log(4186 < sphereVolume(10) && sphereVolume(10) < 4189);
+

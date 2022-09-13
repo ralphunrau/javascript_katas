@@ -29,4 +29,43 @@ const prismVolume = function(height, width, depth) {
   return depth * width * height;
 };
 
-console.log(prismVolume(3, 4, 5) === 60);
+console.log(prismVolume(3, 4, 5) === 60); //checks to make sure function is working properly
+
+const totalVolume = function(obj) {
+  let totalVolume = 0;
+
+  for (let x of obj) {
+    if (x.type === 'sphere') {
+      totalVolume += sphereVolume(x.radius);
+    } else if (x.type === 'cone') {
+      totalVolume += coneVolume(x.radius, x.height);
+    }
+  }
+
+  return totalVolume;
+};
+
+//objects for total volume function
+const largeSphere = {
+  type: 'sphere',
+  radius: 40
+}
+
+const smallSphere = {
+  type: 'sphere',
+  radius: 10
+}
+
+const cone = {
+  type: 'cone',
+  radius: 3,
+  height: 5
+}
+
+const duck = [
+  largeSphere,
+  smallSphere,
+  cone
+]
+
+console.log(272000 < totalVolume(duck) && totalVolume(duck) < 275000); //checks to make sure function is working properly
